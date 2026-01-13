@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Case Reminder - Vakil App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Load React from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Load Babel Standalone for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Load the React app -->
+    <script type="text/babel" src="App.js"></script>
+    <!-- Fallback: If external script fails, show error message -->
+    <script>
+        // Check if React loaded successfully
+        window.addEventListener('load', function() {
+            if (typeof React === 'undefined' || typeof ReactDOM === 'undefined') {
+                document.getElementById('root').innerHTML = 
+                    '<div style="padding: 20px; text-align: center; color: red;">' +
+                    '<h2>Error: Could not load React libraries</h2>' +
+                    '<p>Please check your internet connection and refresh the page.</p>' +
+                    '<p>Or use a local development server (see README.md for instructions).</p>' +
+                    '</div>';
+            }
+        });
+    </script>
+</body>
+</html>
